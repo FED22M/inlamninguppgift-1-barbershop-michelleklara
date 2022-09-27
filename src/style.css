@@ -1,11 +1,11 @@
 body {
     margin: 0;
-    padding: 0;
+    padding: 0; /* tar bort utrymme på kanter */
 }
 
 /* header är toppen på sidan där loggan och navigeringen är */
 header {
-    position: fixed; /* sitter fast i toppen men hamnar under banner - z-index behövs */
+    position: fixed; /* sitter fast i toppen men hamnar under banner bilden - z-index behövs */
     width: 100%; /* 100% av viewport*/
     z-index: 1; /* header-nav ligger ovanpå img banner */
     top: 0; /* space försvinner på toppen */
@@ -29,7 +29,7 @@ span {
 }
 
 nav ul {
-    position: absolute;
+    position: absolute; /* kopplar ifrån ordinarie dokument flöde - kan förflytta ul mha left och topp */
     left: 55%;
     top: 12%;
 }
@@ -102,6 +102,10 @@ nav li a {
     background-color: rgba (255, 255, 255, .2); /* ingen bakgrundsfärg */
     text-decoration: none; /* ingen underline i länk */
     color: orange;
+    padding: 
+    border: 1px solid orange;
+    
+ 
   
 
 }
@@ -110,9 +114,9 @@ nav li a {
 .learnmore {
     background-color: rgba (255, 255, 255, .2);
     border: 1px solid orange; /* kantlinje runt box */
-    height: 20px;
+    height: 15px;
     width: 200px;
-    padding: 20px;
+    padding: 10px;
     display: inline-block;
 
     
