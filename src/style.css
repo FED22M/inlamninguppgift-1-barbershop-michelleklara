@@ -1,0 +1,196 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* header är toppen på sidan där loggan och navigeringen är */
+header {
+    position: fixed; /* sitter fast i toppen men hamnar under banner - z-index behövs */
+    width: 100%; /* 100% av viewport*/
+    z-index: 1; /* header-nav ligger ovanpå img banner */
+    top: 0; /* space försvinner på toppen */
+    left: 0; /* space försvinner på sidor */
+}
+
+span {
+    display: block;
+}
+
+.main-nav {
+    background-color: rgb(20, 27, 37);
+    opacity: 0.9;
+    padding: 20px 50px 20px 50px;
+    max-width: 100%;
+    position: sticky; /* navigeringen följer med när man scrollar */
+    height: 40px;
+    width: auto;
+    position: relative;
+    white-space: nowrap;
+}
+
+nav ul {
+    position: absolute;
+    left: 55%;
+    top: 12%;
+}
+
+
+/* GJORDE FEL på denna: unordered list i navigeringen */
+1111nav ul {
+    display: flex;
+    white-space: nowrap; /* så att de hamnar på samma rad */
+    margin: auto; /* margin är automatisk vänater och höger */
+    max-width: 100%;
+    align-items: right; /* länkar är till höger */
+    justify-content: right;
+    flex-direction: row;
+    text-align: right;
+    vertical-align: middle; 
+    
+}
+
+
+/* listan i ul */
+nav li {
+    display: inline-block; /* så att de ligger på rad, man kan sätta paddding */
+    font-size: 25;
+    width: 25%; 
+    padding-top: 10px;
+  
+
+}
+
+/* länkarna i nav */
+nav li a {
+    text-decoration: none;
+    color: white;
+}
+
+/* sektion klassen där img och texten finns, banner=förälder */
+.banner {
+    position: relative;
+}
+
+.banner img {
+    max-width: 100%;
+}
+
+/* welcome texten i bannern, welcome-klassen är barn till banner-föräldern  */
+.banner .welcome{
+    position: absolute; /* tar ut från normalt dokument flöde och förlorar space runom texten */
+    left: 55%; /* placerar text 55% från vänster */
+    top: 25%; /* placerar text 25% från topp */
+    color: white;
+}
+
+.banner h2{
+    font-size: 30px;
+    color: white;
+}
+
+.banner .welcome .undertext {
+    color: white;
+}
+
+/* p tagg i welcome texten på bannern */
+.banner .welcome p {
+    color: orange;
+}
+
+/* länken i bannern - under welcome text */
+.learnmore a {
+    background-color: rgba (255, 255, 255, .2); /* ingen bakgrundsfärg */
+    text-decoration: none; /* ingen underline i länk */
+    color: orange;
+  
+
+}
+
+/* p klass som blir boxen runt länken */
+.learnmore {
+    background-color: rgba (255, 255, 255, .2);
+    border: 1px solid orange; /* kantlinje runt box */
+    height: 20px;
+    width: 200px;
+    padding: 20px;
+    display: inline-block;
+
+    
+}
+
+
+
+h1 {
+    color: white;
+    font-size: ;
+    display: flex;
+    white-space: nowrap;
+    margin: auto;
+    align-items: left;
+    justify-content: left;
+    flex-direction: row;
+    text-align: left; 
+    position: absolute; 
+    padding-top: 10px;
+}
+
+
+
+
+
+
+/* logga i header-nav */
+/*nav img {
+    display: flex;
+    white-space: nowrap;
+    margin: auto;
+    max-width: 100%;
+    align-items: left;
+    justify-content: left;
+    flex-direction: row;
+    text-align: left; 
+    position: absolute;  
+} */
+
+
+/* sektion klassen under bannern */
+.tjanster {
+    background-color: orange;
+    height: 500px;
+    max-width: 100%;
+    border: 1px solid black;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    
+}
+
+/* div boxarna i tjanster klassen */
+.tjanster > div {
+    background-color: orange;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+/* .tjanster > div:nth-child(1) {
+    grid-column: 
+
+}*/
+
+/* egenskaper för box 2 */
+.tjanster .box2 {
+    background-color: beige;
+}
+
+.tjanster .box4 {
+    background-color: beige;
+}
+
+
+
+/* .tjanster img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%; /* rundade hörn */
+} */ 
