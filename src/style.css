@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0; /* tar bort utrymme på kanter */
+    
 }
 
 /* header är toppen på sidan där loggan och navigeringen är */
@@ -17,14 +18,13 @@ span {
 }
 
 .main-nav {
+    position: sticky; /* navigeringen följer med när man scrollar */
     background-color: rgb(20, 27, 37);
     opacity: 0.9;
     padding: 20px 50px 20px 50px;
-    max-width: 100%;
-    position: sticky; /* navigeringen följer med när man scrollar */
+    width: 100%;
     height: 40px;
     width: auto;
-    position: relative;
     white-space: nowrap;
 }
 
@@ -56,7 +56,7 @@ nav li {
     font-size: 25;
     width: 25%; 
     padding-top: 10px;
-  
+    
 
 }
 
@@ -69,6 +69,7 @@ nav li a {
 /* sektion klassen där img och texten finns, banner=förälder */
 .banner {
     position: relative;
+    
 }
 
 .banner img {
@@ -98,34 +99,32 @@ nav li a {
     color:  rgb(191, 146, 91);
 }
 
-/* länken i bannern - under welcome text */
+.undertext {
+    border-left: 3px solid rgb(191, 146, 91);
+    padding-bottom: 90px;
+    padding-left: 60px;
+}
+
+/* länken i bannern med kantlinje - under welcome text */
 .learnmore a {
+    position: absolute;
     background-color: rgba (255, 255, 255, .2); /* ingen bakgrundsfärg */
     text-decoration: none; /* ingen underline i länk */
     color:  rgb(191, 146, 91);
-    padding: 
-    border: 1px solid orange;
-    
-    
-
+    padding: 10px;
+    border: 1px solid rgb(191, 146, 91); /* kantlinje runt länk */
+    bottom: 50px;
+    left: 60px;
 }
-
+    
 a:hover {
     color:  rgb(191, 146, 91);
 }
 
-/* p klass som blir boxen runt länken */
-.learnmore {
-    background-color: rgba (255, 255, 255, .2);
-    border: 1px solid  rgb(191, 146, 91); /* kantlinje runt box */
-    height: 15px;
-    width: 200px;
-    padding: 10px;
-    display: inline-block;
-
-    
+.learnmore a:hover {
+    background-color:  rgb(191, 146, 91);
+    color: white;
 }
-
 
 
 h1 {
@@ -141,10 +140,6 @@ h1 {
     position: absolute; 
     padding-top: 10px;
 }
-
-
-
-
 
 
 /* logga i header-nav */
@@ -164,13 +159,12 @@ h1 {
 /* sektion klassen under bannern */
 .tjanster {
     background-color:  rgb(223, 182, 131);
-    height: 500px;
-    max-width: 100%;
-   
+    width: 100%;
     margin: 0 auto;
     display: grid;
+    padding: 0;
+    gap: 0;
     grid-template-columns: repeat(4, 25%);
-    
 }
 
 /* div boxarna i tjanster klassen */
@@ -200,7 +194,7 @@ h1 {
     height: 250px;
     border-radius: 50%;
     margin-top: -50%;
-    z-index: 4;
+    
 }
 
 .box2 div img {
@@ -208,7 +202,7 @@ h1 {
     height: 250px;
     border-radius: 50%;
     margin-top: -50%;
-    z-index: 4;
+     
 }
 
 .box3 div img {
@@ -216,7 +210,7 @@ h1 {
     height: 250px;
     border-radius: 50%;
     margin-top: -50%;
-    z-index: 4;
+    
 }
 
 .box4 div img {
@@ -224,28 +218,64 @@ h1 {
     height: 250px;
     border-radius: 50%;
     margin-top: -50%;
-    z-index: 4;
+   
 }
 
+.about-barber {
+    background-color: white;
+    max-width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+
+}
 
 .about-barber .about.main {
-    background-color: rgb(235, 232, 222)
+    background-color: white;
     width: 100%;
     height: 500px;
     padding: 50px;
     margin: 0 auto;
 }
 
+
 .about-barber .about-main img {
-    width: 50%;
-    height: 900px;
+    width: 100%;
+    height: 950px;
     
-    z-index: 5;
+   
+}
+
+.about-text {
+    display: inline-block;
+    position: absolute;
+    
+    
 }
 
 
-/* .tjanster img{
-    width: 250px;
-    height: 250px;
-    border-radius: 50%; /* rundade hörn */
-} */ 
+
+.testimonial {
+    background-color: rgb(235, 232, 222);
+    height: 500px;
+    width: 100vw;
+    margin: 0 auto;
+    
+
+}
+
+
+.footer {
+    background-color: black;
+    height: 300px;
+    width: 100vw;
+    color: white;
+    margin: 0 auto;
+    
+}
+
+@media screen and (min-width: 400px) {
+    .banner .welcome h2{
+      
+
+}
