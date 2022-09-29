@@ -90,12 +90,17 @@ nav li a {
 /* sektion klassen där img och texten finns, banner=förälder */
 .banner {
     position: relative;
+    width: 100%;
+    white-space: nowrap;
+    background-color: black;
     
 }
 
 .banner img {
-    max-width: 100%;
-
+    width: 100%;
+    opacity: 0.5;
+    position: relative;
+    
 }
 
 /* welcome texten i bannern, welcome-klassen är barn till banner-föräldern  */
@@ -187,17 +192,17 @@ h1 {
 .tjanster {
     background-color:  rgb(223, 182, 131);
     width: 100%;
-    height: 400px;
-    margin: 0 auto;
     display: grid;
     padding: 0;
     gap: 0;
     grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(4, 100%);
 }
 
 .tjanster h3 {
     font-family: Barlow-bold;
     font-size: 20px;
+    padding-top: 30px;
     color: white;
 }
 
@@ -205,14 +210,19 @@ h1 {
     font-family: Poppins;
     color: white;
     font-size: 12px;
+    padding-top: 30px;
+    padding-bottom: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 /* div boxarna i tjanster klassen */
 .tjanster > div {
     background-color: rgb(223, 182, 131);
     text-align: center;
-    padding: 20px;
-    margin-top: 0;
+    padding: 0px;
+    z-index: 999;
+   
 }
 
 /* .tjanster > div:nth-child(1) {
@@ -220,20 +230,39 @@ h1 {
 
 }*/
 
+.tjanster .box1 {
+    position: relative;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    background-color:  rgb(223, 182, 131);
+}
+
 /* egenskaper för box 2 */
 .tjanster .box2 {
     background-color: rgb(191, 146, 91);
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+.tjanster .box3 {
+    background-color: rgb(223, 182, 131);
+    grid-row-start: 1;
+    grid-row-end: 1;
 }
 
 .tjanster .box4 {
     background-color: rgb(191, 146, 91);
+    grid-row-start: 1;
+    grid-row-end: 1;
 }
+
+
 
 .box1 div img {
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    margin-top: -50%;
+    margin-top: -40%;
     
 }
 
@@ -241,7 +270,8 @@ h1 {
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    margin-top: -50%;
+    margin-top: -40%;
+    
      
 }
 
@@ -249,7 +279,7 @@ h1 {
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    margin-top: -50%;
+    margin-top: -40%;
     
 }
 
@@ -257,7 +287,7 @@ h1 {
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    margin-top: -50%;
+    margin-top: -40%;
    
 }
 
