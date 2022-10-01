@@ -18,17 +18,29 @@
     src: url(font-family/Poppins-Bold.ttf);
 }
 
+
+
+
 body {
     margin: 0;
     padding: 0; /* tar bort utrymme på kanter */
     
 }
 
+body, html {
+    height: 100%;
+  }
+
+
+
+/* Sektion 1 */
+
+
 /* header är toppen på sidan där loggan och navigeringen är */
 header {
     position: fixed; /* sitter fast i toppen men hamnar under banner bilden - z-index behövs */
     width: 100%; /* 100% av viewport*/
-    z-index: 1; /* header-nav ligger ovanpå img banner */
+    z-index: 999; /* header-nav ligger ovanpå img banner */
     top: 0; /* space försvinner på toppen */
     left: 0; /* space försvinner på sidor */
 }
@@ -43,15 +55,16 @@ span {
     opacity: 0.9;
     padding: 20px 50px 20px 50px;
     width: 100%;
-    height: 40px;
-    width: auto;
+    height: 50px;
+    width: 100%;
     white-space: nowrap;
 }
 
+
 nav ul {
-    position: absolute; /* kopplar ifrån ordinarie dokument flöde - kan förflytta ul mha left och topp */
+    position: absolute; /* kopplar ifrån ordinarie dokument flöde - kan förflytta ul mha left och topp*/
     left: 55%;
-    top: 12%;
+    
 }
 
 
@@ -71,14 +84,12 @@ nav ul {
 
 
 /* listan i ul */
-nav li {
+nav ul li {
     display: inline-block; /* så att de ligger på rad, man kan sätta paddding */
+    margin: 0 5px;
     font-size: 25;
-    width: 25%; 
-    padding-top: 10px;
+    padding-top: 0px;
     font-family: Barlow;
-    
-
 }
 
 /* länkarna i nav */
@@ -94,14 +105,27 @@ nav li a {
     white-space: nowrap;
     background-color: black;
     
-}
-
-.banner img {
-    width: 100%;
-    opacity: 0.5;
-    position: relative;
     
 }
+
+.parallax {
+    background-image: url("./img/nathon-oski-EW_rqoSdDes-unsplash.jpg");
+    height: 1100px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.4;
+
+}
+
+/*.banner img {
+    width: 100%;
+    opacity: 0.5;
+    position: relative;  
+   
+}*/
+
 
 /* welcome texten i bannern, welcome-klassen är barn till banner-föräldern  */
 .banner .welcome{
@@ -109,23 +133,30 @@ nav li a {
     left: 55%; /* placerar text 55% från vänster */
     top: 25%; /* placerar text 25% från topp */
     color: white;
+    z-index: 2;
 }
 
 .banner h2{
-    font-size: 30px;
-    font-family: Barlow;
+    font-size: 50px;
+    font-family: Barlow-bold;
     color: white;
 }
+
 
 .banner .welcome .undertext {
     color: white;
     font-family: Poppins;
+    
 }
 
 /* p tagg i welcome texten på bannern */
 .banner .welcome p {
     color:  rgb(191, 146, 91);
-    font-family: Poppins;
+    font-family: Poppins-bold;
+}
+
+.banner .welcome h2 span {
+    color: transparent;
 }
 
 .undertext {
@@ -151,6 +182,7 @@ nav li a {
 a:hover {
     color:  rgb(191, 146, 91);
 }
+
 
 .learnmore a:hover {
     background-color:  rgb(191, 146, 91);
@@ -188,6 +220,10 @@ h1 {
 } */
 
 
+
+/* Sektion 2 */
+
+
 /* sektion klassen under bannern */
 .tjanster {
     background-color:  rgb(223, 182, 131);
@@ -197,6 +233,8 @@ h1 {
     gap: 0;
     grid-template-columns: repeat(4, 25%);
     grid-template-rows: repeat(4, 100%);
+    position: relative;
+   
 }
 
 .tjanster h3 {
@@ -210,10 +248,9 @@ h1 {
     font-family: Poppins;
     color: white;
     font-size: 12px;
-    padding-top: 30px;
-    padding-bottom: 100px;
-    padding-left: 10px;
-    padding-right: 10px;
+    text-align: center;
+    margin-bottom: 100px;
+
 }
 
 /* div boxarna i tjanster klassen */
@@ -221,7 +258,7 @@ h1 {
     background-color: rgb(223, 182, 131);
     text-align: center;
     padding: 0px;
-    z-index: 999;
+    z-index: 1;
    
 }
 
@@ -231,10 +268,14 @@ h1 {
 }*/
 
 .tjanster .box1 {
-    position: relative;
     grid-row-start: 1;
     grid-row-end: 1;
     background-color:  rgb(223, 182, 131);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    
 }
 
 /* egenskaper för box 2 */
@@ -242,18 +283,25 @@ h1 {
     background-color: rgb(191, 146, 91);
     grid-row-start: 1;
     grid-row-end: 1;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    
 }
 
 .tjanster .box3 {
     background-color: rgb(223, 182, 131);
     grid-row-start: 1;
     grid-row-end: 1;
+    display: flex;
 }
 
 .tjanster .box4 {
     background-color: rgb(191, 146, 91);
     grid-row-start: 1;
     grid-row-end: 1;
+    display: flex;
 }
 
 
@@ -262,7 +310,8 @@ h1 {
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    margin-top: -40%;
+    margin-top: -35%;
+    object-fit: ;
     
 }
 
@@ -270,7 +319,7 @@ h1 {
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    margin-top: -40%;
+    margin-top: -35%;
     
      
 }
@@ -279,7 +328,7 @@ h1 {
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    margin-top: -40%;
+    margin-top: -35%;
     
 }
 
@@ -287,90 +336,109 @@ h1 {
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    margin-top: -40%;
+    margin-top: -35%;
    
 }
 
-.about-barber {
-    background-color: white;
-    max-width: 100%;
-    margin: 0 auto;
-    display: flex;
-    /* grid-template-columns: repeat(2, 50%); */
 
+
+/* Sektion 3 */
+
+.about-barber {
+    position: relative;
+    margin: 0%;
+    padding: 0%;
 }
 
 .about-barber img {
-    width: 50%;
-    height: 1000px;
+    width: 40%;
+    padding: 10%;
+
 }
 
-
 .about-barber .about-text {
-    display: inline-block;
     position: absolute;
-    left: 60%;
-    top: 200%; /* top: 40%; hamnar från startsidans topp 40% ner'??? */
-      
+    bottom: 20%;
+    left: 55%;
     
 }
 
-.about-barber h4 {
-    font-size: ;
-    color:  rgb(191, 146, 91);
+.about-text h4 {
     font-family: Barlow-bold;
+    color: rgb(191, 146, 91);
+    font-size: 14px;
 }
 
-.about-text p {
-    font-family: Poppins;
-}
-
-.about-barber .about-text .smooth-barber {
+.smooth-barber {
+    font-family: Barlow-bold;
+    color: black;
     font-size: 30px;
-    font-family: Poppins;
 }
 
-.calender {
-    background-color: rgb(191, 146, 91);
-    display: inline-block;
-    position: absolute;
-    left: 60%;
-    top: 250%; /* tror detta är fel, % från top på startsidan*/
-    height: 100px;
+.barber-under {
+    font-family: Poppins;
+    color: black;
+    font-size: 20px;
+}
+
+.calender-box {
+    background-color:  rgb(191, 146, 91);
     width: 300px;
+    height: 170px;
+    position: relative;
 }
 
 .number-text {
-    color: white;
-    display: inline-block;
-    position: absolute;
     font-family: Barlow-bold;
-
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    left: 55%;
+    bottom: 30%;
+    margin: 0%;
+    padding: 0;
 }
 
+.logo {
+    width: 35%;
+    position: relative;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+/* Sektion 4 */
 
 
 .testimonial {
     background-color: rgb(235, 232, 222);
-    height: 600px;
+    height: 700px;
     width: 100vw;
     margin: 0 auto;
-
     
-
 }
 
-.testimonial div {
+
+
+.testimonial .ruta {
     background-color: white;
-    height: 120px;
-    padding: 10px;
-    width: 200px;
+    height: 200px;
+    padding: 20px;
+    width: 250px;
     display: inline-block;
     position: relative;
-    left: 25%;
+    left: 20%;
+    justify-content:left;
+    align-items: left;
+    font-size: 13px;
+    font-family: Barlow;
     
-
 }
+
 
 .testimonial h4 {
     font-size: 20px;
@@ -382,11 +450,36 @@ h1 {
 }
 
 .testimonial p {
+    font-size: 13px;
+    text-align: left;
+    font-family: Poppins;
+}
+
+.testimonial .under-testimonial {
     font-size: 30px;
     text-align: center;
     font-family: Poppins;
 }
 
+.ruta img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.ruta .name {
+    display: inline-block;
+    justify-content: center;
+}
+
+.ruta .kund {
+    display: inline-block;
+}
+
+
+
+
+/* Sektion 5 = footer */
 
 .footer {
     background-color: black;
@@ -397,65 +490,135 @@ h1 {
     
 }
 
-.footer div {
+.footer .main-footer {
+    background-color: blue;
+    width: 350px;
+    height: 200px;
     display: inline-block;
-    width: 20%;
+    position: relative;
 }
 
-.footer div h5 {
+
+
+
+.footer h5 {
     font-size: 20px;
     font-family: Barlow-bold;
+
 }
 
-.footer div p {
+.footer p {
     font-size: 15px;
     font-family: Barlow-bold;
+
 }
 
 
 
 
 /* responsiv */
-@media screen and (max-width: 1400px) {
-    .banner .welcome h2{
-    font-size: 20px;  
 
-    .main-nav li {
-        font-size: 25px;
+
+
+@media screen and (max-width: 1400px) {
+    
+    .banner .welcome h2 {
+    font-size: 30px;  
     }
+
+
+    .box1 div img {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        margin-top: -35%;
+        object-fit: ;
+        
+    }
+    
+    .box2 div img {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        margin-top: -35%;
+        
+         
+    }
+    
+    .box3 div img {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        margin-top: -35%;
+        
+    }
+    
+    .box4 div img {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        margin-top: -35%;
+       
+    }
+  
 
 }
 
 @media screen and (max-width: 960px) {
+    
     .banner .welcome h2{
-    font-size: 15px;  
-
-}
-
-@media screen and (max-width: 700px) {
-    .banner {
-    position: absolute;    
+    font-size: 25px;  
     }
 
-    .banner .welcome{
-    position: absolute; 
-    padding: 5px; }
-
-    .banner .welcome h2{
-    font-size: 10px;  }
-
-    .banner .welcome span {
-    font-size: 1em; }
-    
     .tjanster .img {
     display: block;
     width: 100%;
     margin: 20px auto;
-    }  
+    } 
 
+
+    .box1 div img {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        margin-top: -35%;
+        object-fit: ;
+        
     }
     
+    .box2 div img {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        margin-top: -35%;
+        
+         
+    }
+    
+    .box3 div img {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        margin-top: -35%;
+        
+    }
+    
+    .box4 div img {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        margin-top: -35%;
+       
+    }
+
+
+
+
+    }
+
+    
     @media screen and (max-width: 680px) {
+    
     .tjanster .img {
     display: block;
     width: 100%;
@@ -480,19 +643,54 @@ h1 {
         position: absolute; 
         padding: 5px; 
         left: 1%;
-        top: 1%}
-    
-        .banner .welcome h2{
-        font-size: 10px;  
-        left: 1%;
-        top: 1%;
+        top: 1%
     }
     
-        .banner .welcome span {
-        font-size: 1em; }
-
+    .banner .welcome h2{
+        font-size: 30px;  
+       
+    }
+    
+    .banner .welcome span {
+        font-size: 1em; 
+    
     }
 
+
+    .box1 div img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-top: -15%;
+        
+    }
+    
+    .box2 div img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-top: -15%;
+        
+         
+    }
+    
+    .box3 div img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-top: -15%;
+        
+    }
+    
+    .box4 div img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-top: -15%;
+       
+    }
+
+    }
 
     @media screen and (max-width: 560px) {
     .banner {
@@ -531,8 +729,249 @@ h1 {
     .main-nav { 
         top: 0;
     }    
+    
+    .undertext {
+       font-size: 10px;
     }
+ 
+
+
+   
+    .box1 div img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: -15%;
+    
+    }
+
+    .box2 div img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: -15%;
+    
+     
+    }
+
+    .box3 div img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: -15%;
+    
+    }
+
+    .box4 div img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: -15%;
+   
+    }
+    
 
     }
     
+    
+    @media screen and (max-width: 375px) { 
+        
+        .main-nav {
+            position: sticky; /* navigeringen följer med när man scrollar */
+            background-color: rgb(20, 27, 37);
+            opacity: 0.9;
+            padding: 20px 50px 20px 50px;
+            width: 100%;
+            height: 20px;
+            width: auto;
+            white-space: nowrap;
+        
+
+        }
+
+        /* Sektion 1 = header, banner */
+        
+        
+        .banner {
+            position: relative; 
+        }
+
+        .banner h2{
+            font-size: 25px;
+            font-family: Barlow-bold;
+            color: white;
+        }    
+
+        .parallax {
+            height: 
+        }    
+        
+        
+        
+        .main-nav li {
+            display: block;
+            font-size: 10px;
+            width: 100%;
+            margin: 5px 0;
+                
+              
+        }
+
+
+        .main-nav ul {
+            background-color: black;
+            text-align: center;
+                
+        }
+        
+        header {
+            position: relative;
+        }
+        
+        .main-nav { 
+            top: 0;
+        }    
+            
+        .undertext {
+            font-size: 10px;
+        }
+         
+        .banner .welcome h2 {
+            font-size: 20px;
+        }
+        
+           
+        
+        
+        /* Sektion 2 */
+
+
+        .tjanster {
+            display: block;
+            justify-content: center;
+        }
+        
+        .tjanster .img {
+            display: block;
+            width: 100%;
+            margin: 15px auto;
+        }  
+
+        .box1 div img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-top: -15%;
+            
+        }
+        
+        .box2 div img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-top: -15%;
+            
+             
+        }
+        
+        .box3 div img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-top: -15%;
+            
+        }
+        
+        .box4 div img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-top: -15%;
+           
+        }
+
+
+
+        /* Sektion 3 */
+
+
+
+        .about-barber {
+            position: relative;
+            margin: 0%;
+            padding: 0%;
+        }
+        
+        .about-barber .about-img {
+            width: 100%;
+            padding: 0%;
+            margin: 0%;
+        
+        }
+        
+        .about-barber .about-text {
+            position: relative;
+            display: block;
+            bottom: 20%;
+            left: 1%;
+            
+        }
+        
+        .about-text h4 {
+            font-family: Barlow-bold;
+            color: rgb(191, 146, 91);
+            font-size: 7px;
+        }
+        
+        .smooth-barber {
+            font-family: Barlow-bold;
+            color: black;
+            font-size: 15px;
+        }
+        
+        .barber-under {
+            font-family: Poppins;
+            color: black;
+            font-size: 10px;
+        }
+        
+        .calender-box {
+            background-color:  rgb(191, 146, 91);
+            width: 300px;
+            height: 170px;
+            position: relative;
+            margin-bottom: 10%;
+        }
+
+        .logo {
+            width: 35%;
+            position: relative;
+            border-radius: 50%;
+        }
+
+      
+
+
+        
+
+        /* Sektion 4 */
+
+
+        .testimonial {
+            background-color: rgb(235, 232, 222);
+            height: 1000px;
+            width: 100vw;
+            margin: 0 auto;
+        }
+
+
+        .ruta {
+            display: block;
+        
+        }    
+        
+
+        
+    
     }
+    
