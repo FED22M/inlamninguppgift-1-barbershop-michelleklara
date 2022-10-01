@@ -530,36 +530,96 @@ h1 {
 
 /* Sektion 5 = footer */
 
-.footer {
+footer {
     background-color: black;
-    height: 300px;
-    width: 100vw;
+    width: 100%;
     color: white;
-    margin: 0 auto;
+    margin: 0%;
+    padding: 0%;
     
 }
 
-.footer .main-footer {
-    background-color: blue;
-    width: 350px;
-    height: 200px;
+.footer-innehåll {
+    background-color:black;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 5%; /* ändrar storlek på padding top i text innehållet */
+    padding-bottom: 5%; /* ändrar storlek på padding bottom i text innehållet */
+
+}
+
+.main-footer {
+    background-color: black;
+    width: 20%;
     display: inline-block;
     position: relative;
+    margin: 2%;
 }
 
 
-
-
-.footer h5 {
+footer h5 {
     font-size: 20px;
     font-family: Barlow-bold;
 
 }
 
-.footer p {
-    font-size: 15px;
-    font-family: Barlow-bold;
+footer p {
+    font-size: 17px;
+    font-family: Poppins;
 
+}
+
+.socialmedia img {
+    background-color:  rgb(191, 146, 91);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 2%; /* mellanrum mellan ikonerna */
+
+}
+
+footer li {
+    font-family: Poppins;
+    font-size: 20px;
+    list-style: none;
+    margin-left: -2.5rem; /* tar bort tomt utrymme före listan */
+    padding-bottom: 1%;
+}    
+
+.icons img {
+    width: 35px;
+    height: 35px;
+    display: block;
+}
+
+.contact {
+    display: flex;
+}
+
+.contact p {
+    position: relative;
+    bottom: 20px;
+    left: 10px; /*mellanrumm från ikoner */
+}
+
+.icons .map-icon {
+    /* margin-top: -15px; /* mellanrum från map ikon till h4 */
+    /*padding-bottom: 65px; /* mellanrum från map ikon till phon-ikon */
+   
+
+}
+
+.phone-icon {
+    /*padding-bottom: 15px;*/
+    position: relative;
+    top: 30%;
+}
+
+.mail-icon {
+    position: relative;
+    top: 37%;
 }
 
 
