@@ -32,6 +32,9 @@ body, html {
   }
 
 
+p {
+    font-family: Poppins;
+}
 
 /* Sektion 1 */
 
@@ -416,26 +419,10 @@ h1 {
 
 .testimonial {
     background-color: rgb(235, 232, 222);
-    height: 700px;
-    width: 100vw;
+    height: 800px;
+    width: 100%; /* 100vw? */
     margin: 0 auto;
-    
-}
-
-
-
-.testimonial .ruta {
-    background-color: white;
-    height: 200px;
-    padding: 20px;
-    width: 250px;
-    display: inline-block;
     position: relative;
-    left: 20%;
-    justify-content:left;
-    align-items: left;
-    font-size: 13px;
-    font-family: Barlow;
     
 }
 
@@ -449,17 +436,60 @@ h1 {
     padding-top: 100px;
 }
 
-.testimonial p {
-    font-size: 13px;
-    text-align: left;
-    font-family: Poppins;
-}
-
-.testimonial .under-testimonial {
-    font-size: 30px;
+.under-testimonial {
     text-align: center;
     font-family: Poppins;
+    font-size: 30px;
 }
+
+.testimonial .ruta p {
+    font-size: 13px;
+    text-align: left;
+ 
+}
+
+
+.citat-tecken {
+    background-color:  rgb(191, 146, 91);
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    top: -20;
+
+
+}
+
+.rutor {
+    display: flex;
+    flex-direction: row;
+    padding: 0%;
+    margin: 1rem 0;
+    justify-content: center; /* rutorna hamnar i centrum */
+}
+
+
+.ruta {
+    width: 20%;
+    background-color: white;
+    display: inline-block;
+    padding: 20px;
+    margin-left: 1%;
+    border-radius: 5px;
+    
+    
+}
+
+.innehåll-ruta {
+    position: relative;
+    text-align: left;
+    bottom: 19%;
+    
+}
+
 
 .ruta img {
     width: 80px;
@@ -467,14 +497,33 @@ h1 {
     border-radius: 50%;
 }
 
+.checked {
+    color:  rgb(191, 146, 91);
+}
+
+.stars {
+    display: inline-block;
+    position: absolute;
+    bottom: 60px;
+    padding-left: 5%;
+}
+
 .ruta .name {
     display: inline-block;
-    justify-content: center;
+    position: absolute;
+    bottom: 15px;
+    padding-left: 5%;
 }
 
 .ruta .kund {
     display: inline-block;
+    position: absolute;
+    bottom: -15px;
+    padding-left: 5%;
+    font-family: Poppins;
+    color: rgb(191, 146, 91);
 }
+
 
 
 
@@ -957,18 +1006,7 @@ h1 {
         /* Sektion 4 */
 
 
-        .testimonial {
-            background-color: rgb(235, 232, 222);
-            height: 1000px;
-            width: 100vw;
-            margin: 0 auto;
-        }
-
-
-        .ruta {
-            display: block;
-        
-        }    
+      
         
 
         
