@@ -1,21 +1,21 @@
 @font-face {
     font-family: Barlow;
-    src: url(font-family/BarlowSemiCondensed-Regular.ttf);
+    src: url(./font-family/BarlowSemiCondensed-Regular.ttf);
 }
 
 @font-face {
     font-family: Barlow-bold;
-    src: url(font-family/BarlowSemiCondensed-Bold.ttf);
+    src: url(./font-family/BarlowSemiCondensed-Bold.ttf);
 }
 
 @font-face {
     font-family: Poppins;
-    src: url(font-family/Poppins-Regular.ttf);
+    src: url(./font-family/Poppins-Regular.ttf);
 }
 
 @font-face {
-    font-family: Poppins bold;
-    src: url(font-family/Poppins-Bold.ttf);
+    font-family: Poppins-bold;
+    src: url(./font-family/Poppins-Bold.ttf);
 }
 
 
@@ -23,17 +23,31 @@
 
 body {
     margin: 0;
-    padding: 0; /* tar bort utrymme på kanter */
-    
+    padding: 0;
+    /* tar bort utrymme på kanter */
+
 }
-
-body, html {
-    height: 100%;
-  }
-
 
 p {
     font-family: Poppins;
+
+}
+
+h1 {
+    color: white;
+    font-family: Barlow;
+
+ 
+}
+
+h5 {
+    font-family: barlow-bold;
+    font-size: 30px;
+}
+
+li {
+    font-family: Poppins;
+    font-size: 20px;
 }
 
 /* Sektion 1 */
@@ -41,54 +55,51 @@ p {
 
 /* header är toppen på sidan där loggan och navigeringen är */
 header {
-    position: fixed; /* sitter fast i toppen men hamnar under banner bilden - z-index behövs */
-    width: 100%; /* 100% av viewport*/
-    z-index: 999; /* header-nav ligger ovanpå img banner */
-    top: 0; /* space försvinner på toppen */
-    left: 0; /* space försvinner på sidor */
+    position: fixed;
+    /* sitter fast i toppen men hamnar under banner bilden - z-index behövs */
+    width: 100%;
+    /* 100% av viewport*/
+    z-index: 999;
+    /* header-nav ligger ovanpå img banner */
+    top: 0;
+    /* space försvinner på toppen */
+    left: 0;
+    /* space försvinner på sidor */
+    background-color: rgba(20, 27, 37, 0.644);
+    
+    
 }
+
+
 
 span {
     display: block;
 }
 
 .main-nav {
-    position: sticky; /* navigeringen följer med när man scrollar */
-    background-color: rgb(20, 27, 37);
-    opacity: 0.9;
-    padding: 20px 50px 20px 50px;
-    width: 100%;
+    /* navigeringen följer med när man scrollar */
+    margin: 20px 50px 20px 50px;
     height: 50px;
-    width: 100%;
     white-space: nowrap;
-}
-
-
-nav ul {
-    position: absolute; /* kopplar ifrån ordinarie dokument flöde - kan förflytta ul mha left och topp*/
-    left: 55%;
-    
-}
-
-
-/* GJORDE FEL på denna: unordered list i navigeringen */
-1111nav ul {
     display: flex;
-    white-space: nowrap; /* så att de hamnar på samma rad */
-    margin: auto; /* margin är automatisk vänater och höger */
-    max-width: 100%;
-    align-items: right; /* länkar är till höger */
-    justify-content: right;
-    flex-direction: row;
+    align-items: center;
+}
+
+.main-nav ul{
+    flex: 1;
     text-align: right;
-    vertical-align: middle; 
     
+}
+
+.main-nav h1 {
+    font-family: Barlow;
 }
 
 
 /* listan i ul */
 nav ul li {
-    display: inline-block; /* så att de ligger på rad, man kan sätta paddding */
+    display: inline-block;
+    /* så att de ligger på rad, man kan sätta paddding */
     margin: 0 5px;
     font-size: 25;
     padding-top: 0px;
@@ -105,21 +116,25 @@ nav li a {
 .banner {
     position: relative;
     width: 100%;
-    white-space: nowrap;
+    height: 100vh;
     background-color: black;
-    
-    
+
 }
 
 .parallax {
     background-image: url("./img/nathon-oski-EW_rqoSdDes-unsplash.jpg");
-    height: 1100px;
+    height: 1000px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 0.4;
 
+
+}
+
+.burger{
+    display: none;
 }
 
 /*.banner img {
@@ -131,16 +146,20 @@ nav li a {
 
 
 /* welcome texten i bannern, welcome-klassen är barn till banner-föräldern  */
-.banner .welcome{
-    position: absolute; /* tar ut från normalt dokument flöde och förlorar space runom texten */
-    left: 55%; /* placerar text 55% från vänster */
-    top: 25%; /* placerar text 25% från topp */
+.banner .welcome {
+    position: absolute;
+    /* tar ut från normalt dokument flöde och förlorar space runom texten */
+    left: 55%;
+    /* placerar text 55% från vänster */
+    top: 25%;
+    /* placerar text 25% från topp */
     color: white;
+    width: 40%;
     z-index: 2;
 }
 
-.banner h2{
-    font-size: 50px;
+.banner h2 {
+    font-size: 45px;
     font-family: Barlow-bold;
     color: white;
 }
@@ -149,12 +168,12 @@ nav li a {
 .banner .welcome .undertext {
     color: white;
     font-family: Poppins;
-    
+
 }
 
 /* p tagg i welcome texten på bannern */
 .banner .welcome p {
-    color:  rgb(191, 146, 91);
+    color: rgb(191, 146, 91);
     font-family: Poppins-bold;
 }
 
@@ -164,49 +183,37 @@ nav li a {
 
 .undertext {
     border-left: 3px solid rgb(191, 146, 91);
-    padding-bottom: 90px;
     padding-left: 60px;
     font-family: Poppins;
 }
 
 /* länken i bannern med kantlinje - under welcome text */
-.learnmore a {
-    position: absolute;
-    background-color: rgba (255, 255, 255, .2); /* ingen bakgrundsfärg */
-    text-decoration: none; /* ingen underline i länk */
-    color:  rgb(191, 146, 91);
+.learnmore {
+
+    background-color: rgba (255, 255, 255, .2);
+    /* ingen bakgrundsfärg */
+    text-decoration: none;
+    /* ingen underline i länk */
+    color: rgb(191, 146, 91);
     padding: 10px;
-    border: 1px solid rgb(191, 146, 91); /* kantlinje runt länk */
-    bottom: 50px;
-    left: 60px;
+    border: 1px solid rgb(191, 146, 91);
+    /* kantlinje runt länk */
     font-family: Barlow-bold;
+    display: inline-block;
+    margin-top: 2em;
 }
-    
+
 a:hover {
-    color:  rgb(191, 146, 91);
+    color: rgb(191, 146, 91);
 }
 
 
 .learnmore a:hover {
-    background-color:  rgb(191, 146, 91);
+    background-color: rgb(191, 146, 91);
     color: white;
 }
 
 
-h1 {
-    color: white;
-    font-size: ;
-    font-family: Barlow;
-    display: flex;
-    white-space: nowrap;
-    margin: auto;
-    align-items: left;
-    justify-content: left;
-    flex-direction: row;
-    text-align: left; 
-    position: absolute; 
-    padding-top: 10px;
-}
 
 
 /* logga i header-nav */
@@ -229,7 +236,7 @@ h1 {
 
 /* sektion klassen under bannern */
 .tjanster {
-    background-color:  rgb(223, 182, 131);
+    background-color: rgb(223, 182, 131);
     width: 100%;
     display: grid;
     padding: 0;
@@ -237,7 +244,7 @@ h1 {
     grid-template-columns: repeat(4, 25%);
     grid-template-rows: repeat(4, 100%);
     position: relative;
-   
+
 }
 
 .tjanster h3 {
@@ -257,12 +264,12 @@ h1 {
 }
 
 /* div boxarna i tjanster klassen */
-.tjanster > div {
+.tjanster>div {
     background-color: rgb(223, 182, 131);
     text-align: center;
     padding: 0px;
     z-index: 1;
-   
+
 }
 
 /* .tjanster > div:nth-child(1) {
@@ -273,12 +280,12 @@ h1 {
 .tjanster .box1 {
     grid-row-start: 1;
     grid-row-end: 1;
-    background-color:  rgb(223, 182, 131);
+    background-color: rgb(223, 182, 131);
     justify-content: center;
     align-items: center;
     display: flex;
     text-align: center;
-    
+
 }
 
 /* egenskaper för box 2 */
@@ -290,7 +297,7 @@ h1 {
     align-items: center;
     display: flex;
     text-align: center;
-    
+
 }
 
 .tjanster .box3 {
@@ -309,62 +316,46 @@ h1 {
 
 
 
-.box1 div img {
+.img-tjanster {
     width: 250px;
     height: 250px;
     border-radius: 50%;
     margin-top: -35%;
     object-fit: ;
-    
+
 }
 
-.box2 div img {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    margin-top: -35%;
-    
-     
+.box1 p, .box2 p, .box3 p, .box4 p{
+    padding: 0 10%
 }
 
-.box3 div img {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    margin-top: -35%;
-    
-}
-
-.box4 div img {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    margin-top: -35%;
-   
-}
 
 
 
 /* Sektion 3 */
 
+.barber-img {
+    width: 761px;
+    min-width: 761px;
+    height: 1142px;
+    display: inline-block;
+    background-image: url("./img/jason-leung-2seUdPQNy_I-unsplash.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 10%;
+}
+
+
 .about-barber {
-    position: relative;
     margin: 0%;
     padding: 0%;
-}
-
-.about-barber img {
-    width: 40%;
-    padding: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
 }
 
-.about-barber .about-text {
-    position: absolute;
-    bottom: 20%;
-    left: 55%;
-    
-}
 
 .about-text h4 {
     font-family: Barlow-bold;
@@ -385,7 +376,7 @@ h1 {
 }
 
 .calender-box {
-    background-color:  rgb(191, 146, 91);
+    background-color: rgb(191, 146, 91);
     width: 300px;
     height: 170px;
     position: relative;
@@ -400,12 +391,16 @@ h1 {
     bottom: 30%;
     margin: 0%;
     padding: 0;
+
 }
 
 .logo {
     width: 35%;
-    position: relative;
+    position: absolute;
     border-radius: 50%;
+    top: 20%;
+    left: 10%;
+
 }
 
 
@@ -419,11 +414,11 @@ h1 {
 
 .testimonial {
     background-color: rgb(235, 232, 222);
-    height: 800px;
-    width: 100%; /* 100vw? */
+    width: 100%;
     margin: 0 auto;
     position: relative;
-    
+    padding-bottom: 10%;
+
 }
 
 
@@ -445,20 +440,20 @@ h1 {
 .testimonial .ruta p {
     font-size: 13px;
     text-align: left;
- 
+
 }
 
-
 .citat-tecken {
-    background-color:  rgb(191, 146, 91);
+    background-color: #b78649;
     color: white;
-    font-size: 50px;
-    text-align: center;
     position: relative;
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    top: -20;
+    text-align: center;
+    top: 0%;
+    left: 0%;
+    font-size: 50px;
 
 
 }
@@ -466,30 +461,27 @@ h1 {
 .rutor {
     display: flex;
     flex-direction: row;
-    padding: 0%;
-    margin: 1rem 0;
-    justify-content: center; /* rutorna hamnar i centrum */
+    padding: 1%;
+    justify-content: center;
+    /*den sätter rutorna i mitten*/
+
 }
 
-
 .ruta {
-    width: 20%;
     background-color: white;
+    padding: 3%;
+    width: 20%;
     display: inline-block;
-    padding: 20px;
     margin-left: 1%;
     border-radius: 5px;
-    
-    
+
 }
 
 .innehåll-ruta {
     position: relative;
-    text-align: left;
+    font-size: 13px;
     bottom: 19%;
-    
 }
-
 
 .ruta img {
     width: 80px;
@@ -498,13 +490,13 @@ h1 {
 }
 
 .checked {
-    color:  rgb(191, 146, 91);
+    color: #b78649;
 }
 
 .stars {
     display: inline-block;
     position: absolute;
-    bottom: 60px;
+    bottom: 65px;
     padding-left: 5%;
 }
 
@@ -520,8 +512,7 @@ h1 {
     position: absolute;
     bottom: -15px;
     padding-left: 5%;
-    font-family: Poppins;
-    color: rgb(191, 146, 91);
+    font-family: Barlow-bold;
 }
 
 
@@ -531,23 +522,25 @@ h1 {
 /* Sektion 5 = footer */
 
 footer {
+
     background-color: black;
     width: 100%;
     color: white;
     margin: 0%;
     padding: 0%;
-    
+
 }
 
 .footer-innehåll {
-    background-color:black;
-    display: flex;
+    background-color: black;
     width: 100%;
+    display: flex;
     flex-direction: row;
     justify-content: center;
-    padding-top: 5%; /* ändrar storlek på padding top i text innehållet */
-    padding-bottom: 5%; /* ändrar storlek på padding bottom i text innehållet */
-
+    padding-top: 5%;
+    /*ändrar storleken på footern*/
+    padding-bottom: 5%;
+    /*ändrar storleken på footern*/
 }
 
 .main-footer {
@@ -558,211 +551,96 @@ footer {
     margin: 2%;
 }
 
-
-footer h5 {
-    font-size: 20px;
-    font-family: Barlow-bold;
-
-}
-
-footer p {
-    font-size: 17px;
-    font-family: Poppins;
-
-}
+.socialmedia {}
 
 .socialmedia img {
-    background-color:  rgb(191, 146, 91);
+    width: 60px;
+    height: 60px;
+    background-color: #b78649;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    margin-right: 2%; /* mellanrum mellan ikonerna */
+    margin-right: 5%;
+}
+
+
+
+
+footer h5 {}
+
+footer p {
+    font-size: 20px;
 
 }
 
+
 footer li {
-    font-family: Poppins;
-    font-size: 20px;
     list-style: none;
-    margin-left: -2.5rem; /* tar bort tomt utrymme före listan */
+    margin-left: -2.5rem;
     padding-bottom: 1%;
-}    
+
+}
 
 .icons img {
     width: 35px;
     height: 35px;
     display: block;
+
 }
 
-.contact {
-    display: flex;
-}
-
-.contact p {
+.tel-icon {
     position: relative;
-    bottom: 20px;
-    left: 10px; /*mellanrumm från ikoner */
-}
-
-.icons .map-icon {
-    /* margin-top: -15px; /* mellanrum från map ikon till h4 */
-    /*padding-bottom: 65px; /* mellanrum från map ikon till phon-ikon */
-   
-
-}
-
-.phone-icon {
-    /*padding-bottom: 15px;*/
-    position: relative;
-    top: 30%;
+    top: 33%;
 }
 
 .mail-icon {
     position: relative;
-    top: 37%;
+    top: 44%;
 }
 
+.kontakt {
+    display: flex;
 
+}
+
+.kontakt p {
+    position: relative;
+    bottom: 20px;
+    left: 10px;
+}
+
+/*footer test*/
 
 
 /* responsiv */
-
-
-
 @media screen and (max-width: 1400px) {
-    
     .banner .welcome h2 {
-    font-size: 30px;  
-    }
+        font-size: 29px;
 
 
-    .box1 div img {
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
-        margin-top: -35%;
-        object-fit: ;
-        
     }
-    
-    .box2 div img {
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
-        margin-top: -35%;
-        
-         
-    }
-    
-    .box3 div img {
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
-        margin-top: -35%;
-        
-    }
-    
-    .box4 div img {
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
-        margin-top: -35%;
-       
-    }
-  
 
+    .barber-img{
+        max-width: 400px;
+        min-width: 400px;
+        min-height: 500px;
+        max-height: 500px;
+        margin: 0;
+        margin-right: 5%;
+    }
 }
 
+
+
 @media screen and (max-width: 960px) {
-    
-    .banner .welcome h2{
-    font-size: 25px;  
-    }
-
-    .tjanster .img {
-    display: block;
-    width: 100%;
-    margin: 20px auto;
-    } 
-
-
-    .box1 div img {
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
-        margin-top: -35%;
-        object-fit: ;
-        
-    }
-    
-    .box2 div img {
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
-        margin-top: -35%;
-        
-         
-    }
-    
-    .box3 div img {
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
-        margin-top: -35%;
-        
-    }
-    
-    .box4 div img {
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
-        margin-top: -35%;
-       
-    }
-
-
-
-
-    }
-
-    
-    @media screen and (max-width: 680px) {
-    
-    .tjanster .img {
-    display: block;
-    width: 100%;
-    margin: 20px auto;
-    } 
-
-    .main-nav li {
-        display: block;
-        font-size: 20px;
-        width: 100%;
-        margin: 5px 0;
-      
-        
-    }
-    .main-nav ul {
-        background-color: black;
-        text-align: center;
-        
-    }
 
     .banner .welcome{
-        position: absolute; 
-        padding: 5px; 
-        left: 1%;
-        top: 1%
+        left: 10%;
+        width: 80%;
     }
-    
-    .banner .welcome h2{
-        font-size: 30px;  
-       
-    }
-    
-    .banner .welcome span {
-        font-size: 1em; 
-    
+
+    .tjanster .img {
+        display: block;
+        width: 100%;
+        margin: 20px auto;
     }
 
 
@@ -771,41 +649,166 @@ footer li {
         height: 150px;
         border-radius: 50%;
         margin-top: -15%;
-        
+
     }
-    
+
     .box2 div img {
         width: 150px;
         height: 150px;
         border-radius: 50%;
         margin-top: -15%;
-        
-         
+
+
     }
-    
+
     .box3 div img {
         width: 150px;
         height: 150px;
         border-radius: 50%;
         margin-top: -15%;
-        
+
     }
-    
+
     .box4 div img {
         width: 150px;
         height: 150px;
         border-radius: 50%;
         margin-top: -15%;
-       
     }
+
+    .about-barber{
+        display: block;
+    }
+
+    
+    .barber-img{
+        max-width: 100%;
+        min-width: 100%;
+        min-height: 400px;
+        max-height: 400px;
+        margin: 0;
+        margin-right: 0;
+        background-position: fixed;
+    }
+    .about-text{
+        margin-left: 5%;
+        margin-bottom: 5%;
+    }
+    
+    .rutor{
+        display: block;
+    }
+
+    .ruta{
+        display: block;
+        width: 92%;
+        margin: 2% 0%;
+    }
+    .footer-innehåll{
+        display: block;
+    }
+    .main-footer{
+        display: block;
+        width: 80%;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+
+    header{
+        background-color: #b78649;
+        height: 40px;
+    }
+
+    .main-nav{
+        margin: 0;
+        display: block;
+    }
+    .main-nav h1{
+        margin: 0;
+        line-height: 40px;
+        padding-left: 40px;
+    }
+
+    .main-nav ul{
+        position: absolute;
+        right: 0px;
+        top: 40px;
+        padding-right: 30px;
+        background-color: rgb(0, 0, 0); 
+        margin: 0;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: none;
+    }
+
+    .main-nav ul.showing {
+        display: block;
+    }
+
+    .burger{
+        position: absolute;
+        top: 5px;
+        right: 20px;
+        font-size: 23px;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        user-select: none; /*tar bort förmågan att markera som text*/
+        display: block;
+    }
+
+
+    .main-nav li{
+        display: block;
+    
+    }
+
+    .tjanster .img {
+        display: block;
+        width: 100%;
+        margin: 20px auto;
+    }
+
+
+    .box1 div img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-top: -15%;
 
     }
 
-    @media screen and (max-width: 560px) {
-    .banner {
-    position: relative; 
+    .box2 div img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-top: -15%;
+
 
     }
+
+    .box3 div img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-top: -15%;
+
+    }
+
+    .box4 div img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-top: -15%;
+
+    }
+}
+
+
+@media screen and (max-width: 560px) {
 
 
     .tjanster {
@@ -816,255 +819,91 @@ footer li {
         display: block;
         width: 100%;
         margin: 20px auto;
-        }  
-
-    .main-nav li {
-        display: block;
-        font-size: 15px;
-        width: 100%;
-        margin: 5px 0;
-      
-        
-    }
-    .main-nav ul {
-        background-color: black;
-        text-align: center;
-        
     }
 
-    header {
-        position: relative;}
 
-    .main-nav { 
-        top: 0;
-    }    
-    
-    .undertext {
-       font-size: 10px;
-    }
- 
-
-
-   
     .box1 div img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-top: -15%;
-    
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-top: -15%;
+
     }
 
     .box2 div img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-top: -15%;
-    
-     
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-top: -15%;
+
+
     }
 
     .box3 div img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-top: -15%;
-    
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-top: -15%;
+
     }
 
     .box4 div img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-top: -15%;
-   
-    }
-    
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-top: -15%;
 
     }
+
+
+}
+
+
+@media screen and (max-width: 375px) {
+
+    .main-nav{
+        padding: 5px 2px;
     
-    
-    @media screen and (max-width: 375px) { 
-        
-        .main-nav {
-            position: sticky; /* navigeringen följer med när man scrollar */
-            background-color: rgb(20, 27, 37);
-            opacity: 0.9;
-            padding: 20px 50px 20px 50px;
-            width: 100%;
-            height: 20px;
-            width: auto;
-            white-space: nowrap;
-        
-
-        }
-
-        /* Sektion 1 = header, banner */
-        
-        
-        .banner {
-            position: relative; 
-        }
-
-        .banner h2{
-            font-size: 25px;
-            font-family: Barlow-bold;
-            color: white;
-        }    
-
-        .parallax {
-            height: 
-        }    
-        
-        
-        
-        .main-nav li {
-            display: block;
-            font-size: 10px;
-            width: 100%;
-            margin: 5px 0;
-                
-              
-        }
+    }
 
 
-        .main-nav ul {
-            background-color: black;
-            text-align: center;
-                
-        }
-        
-        header {
-            position: relative;
-        }
-        
-        .main-nav { 
-            top: 0;
-        }    
-            
-        .undertext {
-            font-size: 10px;
-        }
-         
-        .banner .welcome h2 {
-            font-size: 20px;
-        }
-        
-           
-        
-        
-        /* Sektion 2 */
+    .box1 div img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-top: -15%;
+
+    }
+
+    .box2 div img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-top: -15%;
 
 
-        .tjanster {
-            display: block;
-            justify-content: center;
-        }
-        
-        .tjanster .img {
-            display: block;
-            width: 100%;
-            margin: 15px auto;
-        }  
+    }
 
-        .box1 div img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-top: -15%;
-            
-        }
-        
-        .box2 div img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-top: -15%;
-            
-             
-        }
-        
-        .box3 div img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-top: -15%;
-            
-        }
-        
-        .box4 div img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-top: -15%;
-           
-        }
+    .box3 div img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-top: -15%;}
+
+.box4 div img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-top: -15%;
+
+    }
 
 
 
-        /* Sektion 3 */
 
 
 
-        .about-barber {
-            position: relative;
-            margin: 0%;
-            padding: 0%;
-        }
-        
-        .about-barber .about-img {
-            width: 100%;
-            padding: 0%;
-            margin: 0%;
-        
-        }
-        
-        .about-barber .about-text {
-            position: relative;
-            display: block;
-            bottom: 20%;
-            left: 1%;
-            
-        }
-        
-        .about-text h4 {
-            font-family: Barlow-bold;
-            color: rgb(191, 146, 91);
-            font-size: 7px;
-        }
-        
-        .smooth-barber {
-            font-family: Barlow-bold;
-            color: black;
-            font-size: 15px;
-        }
-        
-        .barber-under {
-            font-family: Poppins;
-            color: black;
-            font-size: 10px;
-        }
-        
-        .calender-box {
-            background-color:  rgb(191, 146, 91);
-            width: 300px;
-            height: 170px;
-            position: relative;
-            margin-bottom: 10%;
-        }
-
-        .logo {
-            width: 35%;
-            position: relative;
-            border-radius: 50%;
-        }
-
-      
-
-
-        
-
-        /* Sektion 4 */
-
+}
 
       
         
