@@ -50,7 +50,9 @@ li {
     font-size: 20px;
 }
 
-/* Sektion 1 */
+
+
+/* Sektion 1 = header och banner */
 
 
 /* header är toppen på sidan där loggan och navigeringen är */
@@ -77,7 +79,6 @@ span {
 }
 
 .main-nav {
-    /* navigeringen följer med när man scrollar */
     margin: 20px 50px 20px 50px;
     height: 50px;
     white-space: nowrap;
@@ -121,6 +122,7 @@ nav li a {
 
 }
 
+/* blev ej parallax effekt */
 .parallax {
     background-image: url("./img/nathon-oski-EW_rqoSdDes-unsplash.jpg");
     height: 1000px;
@@ -133,16 +135,12 @@ nav li a {
 
 }
 
+/* så att hamburharmenyn inte syns */
 .burger{
     display: none;
 }
 
-/*.banner img {
-    width: 100%;
-    opacity: 0.5;
-    position: relative;  
-   
-}*/
+
 
 
 /* welcome texten i bannern, welcome-klassen är barn till banner-föräldern  */
@@ -203,6 +201,7 @@ nav li a {
     margin-top: 2em;
 }
 
+/*hover färg när man trycker på länk */
 a:hover {
     color: rgb(191, 146, 91);
 }
@@ -216,22 +215,10 @@ a:hover {
 
 
 
-/* logga i header-nav */
-/*nav img {
-    display: flex;
-    white-space: nowrap;
-    margin: auto;
-    max-width: 100%;
-    align-items: left;
-    justify-content: left;
-    flex-direction: row;
-    text-align: left; 
-    position: absolute;  
-} */
+
+/* Sektion 2 = 4 boxar med bilder och text */
 
 
-
-/* Sektion 2 */
 
 
 /* sektion klassen under bannern */
@@ -332,7 +319,12 @@ a:hover {
 
 
 
-/* Sektion 3 */
+
+
+/* Sektion 3 = About barber text, bild, box med kalender */
+
+
+
 
 .barber-img {
     width: 761px;
@@ -409,7 +401,7 @@ a:hover {
 
 
 
-/* Sektion 4 */
+/* Sektion 4 = text, 3 boxar med recensioner */
 
 
 .testimonial {
@@ -489,6 +481,7 @@ a:hover {
     border-radius: 50%;
 }
 
+/* stjärnornas färg */
 .checked {
     color: #b78649;
 }
@@ -519,7 +512,9 @@ a:hover {
 
 
 
-/* Sektion 5 = footer */
+/* Sektion 5 = footer, information */
+
+
 
 footer {
 
@@ -551,7 +546,7 @@ footer {
     margin: 2%;
 }
 
-.socialmedia {}
+
 
 .socialmedia img {
     width: 60px;
@@ -561,10 +556,6 @@ footer {
     margin-right: 5%;
 }
 
-
-
-
-footer h5 {}
 
 footer p {
     font-size: 20px;
@@ -607,10 +598,14 @@ footer li {
     left: 10px;
 }
 
-/*footer test*/
 
 
-/* responsiv */
+
+
+/* Responsiva delen */
+
+
+
 @media screen and (max-width: 1400px) {
     .banner .welcome h2 {
         font-size: 29px;
@@ -747,7 +742,8 @@ footer li {
     .main-nav ul.showing {
         display: block;
     }
-
+ 
+    /* Hamburgarmenyn */
     .burger{
         position: absolute;
         top: 5px;
@@ -890,7 +886,7 @@ footer li {
         border-radius: 50%;
         margin-top: -15%;}
 
-.box4 div img {
+    .box4 div img {
         width: 100px;
         height: 100px;
         border-radius: 50%;
@@ -900,15 +896,10 @@ footer li {
 
 
 
-
-
-
 }
 
       
-        
-
-        
+           
     
     }
     
